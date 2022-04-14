@@ -15,6 +15,21 @@
         <p>Not read yet.</p>
       </div>
     </div>
+    <div class="book-form">
+      <form>
+        <input type="text" placeholder="Title" id="input-title" />
+        <input type="text" placeholder="Author" id="input-author" />
+        <div>
+          <label>Pages</label>
+          <input type="number" min="1" placeholder="Pages" id="input-pages" />
+        </div>
+        <div>
+          <label for="read">Read</label>
+          <input title="read" type="checkbox" id="input-read" />
+        </div>
+        <input type="submit" value="Add Book" id="input-submit" />
+      </form>
+    </div>
   </body>
   <script src="app.js"></script>
 </html>

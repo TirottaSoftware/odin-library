@@ -17,3 +17,41 @@
     width: 20%;
     margin: 10px;
 }
+.book-form{
+    border-radius: 10px;
+    padding: 20px;
+    width: 40%;
+    margin: 10% auto;
+    background: skyblue;
+}
+.book-form form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+.book-form form input{
+    width: 90%;
+    margin: 10px 5%;
+    font-size: 24px;
+    padding: 10px;
+    outline: none;
+    border:none;
+    border-radius: 10px;
+    color: grey;
+}
+.book-form form div{
+    display: flex;
+    align-items: center;
+}
+#input-read{
+    height: 30px;
+    width: 30px;
+    border-radius: 20px;
+    margin: 0 10px;
+}
+#input-submit{
+    background: rgb(79, 79, 245);
+    color: white;
+    cursor: pointer;
+}
