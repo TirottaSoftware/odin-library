@@ -29,21 +29,28 @@ function createBookElement(book) {
   let bookPages = document.createElement("p");
   let bookStatus = document.createElement("p");
   let removeButton = document.createElement("button");
+  let statusButton = document.createElement("button");
 
   bookDiv.classList.add("book-card");
+  removeButton.id = "btn-remove";
+  statusButton.id = "btn-status";
+
   bookTitle.textContent = book.title;
   bookAuthor.textContent = book.author;
   bookPages.textContent = `Pages: ${book.pages}`;
   bookStatus.textContent = book.read ? "Read" : "Not read yet.";
   removeButton.textContent = "Remove";
+  statusButton.textContent = book.read ? "Unread" : "Read";
 
   removeButton.addEventListener("click", () => removeBook(book));
+  statusButton.addEventListener("click", () => book.changeStatus());
 
   bookDiv.appendChild(bookTitle);
   bookDiv.appendChild(bookAuthor);
   bookDiv.appendChild(bookPages);
   bookDiv.appendChild(bookStatus);
   bookDiv.appendChild(removeButton);
+  bookDiv.appendChild(statusButton);
 
   return bookDiv;
 }
@@ -86,5 +93,10 @@ function removeBook(book) {
   }
   displayBooks();
 }
+
+Book.prototype.changeStatus = function () {
+  this.read = !this.read;
+  displayBooks();
+};
 
 displayBooks();

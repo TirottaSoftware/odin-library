@@ -15,8 +15,29 @@
     padding: 20px;
     background: rgb(229, 229, 229);
     border-radius: 25px;
-    width: 20%;
+    width: 25%;
     margin: 10px;
+}
+.book-card p{
+    margin: 5px 0;
+    font-size: 20px;
+}
+.book-card button{
+    width: 90%;
+    margin-top: 5px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    cursor: pointer;
+}
+#btn-remove{
+    background: rgb(186, 10, 10);
+    color: white;
+}
+#btn-status{
+    background: yellow;
+    color: black;
 }
 .book-form{
     border-radius: 10px;
