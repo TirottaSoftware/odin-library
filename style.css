@@ -2,3 +2,18 @@
     margin: 0;
     padding: 0;
 }
+.books-container{
+    text-align: center;
+    width: 40%;
+    margin: 10% auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.book-card{
+    padding: 20px;
+    background: rgb(229, 229, 229);
+    border-radius: 25px;
+    width: 20%;
+    margin: 10px;
+}
