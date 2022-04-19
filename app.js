@@ -6,16 +6,40 @@ let readInput = document.querySelector("#input-read");
 let submitButton = document.querySelector("#input-submit");
 
 let myLibrary = [];
-function Book(title, author, pages, read) {
-  this.id = Math.random();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.changeTitle = function (newTitle) {
+
+class Book {
+  constructor(title, author, pages, read) {
+    this.id = Math.random();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  get title() {
+    return this._title;
+  }
+  set title(value) {
+    if (value.length <= 4) {
+      alert("Title too short.");
+      return;
+    }
+    this._title = value;
+  }
+  changeTitle(newTitle) {
     this.title = newTitle;
-  };
+  }
 }
+
+// function Book(title, author, pages, read) {
+//   this.id = Math.random();
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+//   this.changeTitle = function (newTitle) {
+//     this.title = newTitle;
+//   };
+// }
 function addBook(book) {
   //   let book = new Book(title, author, pages, read);
   myLibrary.push(book);
@@ -69,8 +93,10 @@ submitButton.addEventListener("click", (e) => {
   }
 
   let book = new Book(title, author, pages, read);
-  addBook(book);
-  displayBooks();
+  if (book.title) {
+    addBook(book);
+    displayBooks();
+  }
 });
 
 function displayBooks() {
